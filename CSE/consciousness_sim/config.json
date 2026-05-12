@@ -1,0 +1,35 @@
+{
+    "_comment": "=== API配置 === api_key留空则读取环境变量DEEPSEEK_API_KEY。agent_models中可为每个Agent单独指定模型/参数，未指定则使用default值。",
+    "api": {
+        "api_key": "",
+        "base_url": "https://api.deepseek.com",
+        "default_model": "deepseek-v4-flash",
+        "default_max_tokens": 4096,
+        "reasoning_effort": "medium",
+        "thinking_mode": false,
+        "agent_models": {
+            "logical_reasoner": {"model": "deepseek-v4-flash"},
+            "critic": {"model": "deepseek-v4-flash"},
+            "association": {"model": "deepseek-v4-flash"},
+            "emotional": {"model": "deepseek-v4-flash"},
+            "motivation": {"model": "deepseek-v4-flash"},
+            "metacognitive": {"model": "deepseek-v4-flash"},
+            "synthesizer": {"model": "deepseek-v4-pro", "max_tokens": 8192},
+            "stream_writer": {"model": "deepseek-v4-flash"},
+            "stream_synthesizer": {"model": "deepseek-v4-flash"},
+            "expressor": {"model": "deepseek-v4-flash"},
+            "task_launcher": {"model": "deepseek-v4-flash"}
+        }
+    },
+    "engine": {
+        "convergence_rounds": 2,
+        "max_task_rounds": 5,
+        "parallel_modules": true,
+        "use_llm_expressor": true
+    },
+    "display": {
+        "fragment_max_length": 800,
+        "show_api_stats": true,
+        "language": "zh"
+    }
+}
